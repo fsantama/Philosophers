@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 18:10:35 by fsantama          #+#    #+#              #
-#    Updated: 2023/09/11 18:55:58 by fsantama         ###   ########.fr        #
+#    Updated: 2023/09/18 19:16:26 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,8 @@ CC 		=	gcc
 # C COMPILER FLAGS
 CFLAGS =	-Werror -Wall -Wextra
 
-NAME 	=	so_long
-LIBFT 	=	./inc/Libft/libft.a
-PRINTF 	=	./inc/ft_printf/libftprintf.a
+NAME 	=	philo
+
 
 # =============================================================================#
 #                              MANDATORY PART                                  #
@@ -47,7 +46,7 @@ $(PRINTF) :
 
 $(NAME) : $(LIBFT) $(PRINTF) $(OBJS)
 	@echo "$(CYAN) ======================================================="
-	@echo "|		        _     _ _     		    |"
+	@echo "|		        _     _ _     		        |"
 	@echo "|		  _ __ | |__ (_) | ___  		|"
 	@echo "|		 | '_ \| '_ \| | |/ _ \ 		|"
 	@echo "|		 | |_) | | | | | | (_) |		|"
@@ -82,31 +81,30 @@ $(NAME) : $(LIBFT) $(PRINTF) $(OBJS)
 	@echo " =======================================================			"
 	@echo "                                                       $(DEFAULT)"
 	@echo "$(GREEN) $(NAME) make done ✅ $(DEFAULT)"
-	@echo "$(GREEN) $(LIBFT) make done ✅ $(DEFAULT)"
-	@echo "$(GREEN) $(PRINTF) make done ✅ $(DEFAULT)"
-	@$(CC) $(CFLAGS) $(LIBFT) $(PRINTF) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
 	@rm -f $(OBJS)
-	@make -C inc/Libft clean > /dev/null
-	@make -C inc/ft_printf clean > /dev/null
 	@echo "$(RED) $(NAME) objects clean done 🧹 $(DEFAULT)"
-	@echo "$(RED) $(LIBFT) objects clean done 🧹 $(DEFAULT)"
-	@echo "$(RED) $(PRINTF) objects clean done 🧹 $(DEFAULT)"
 
 fclean : clean
 	@rm -f $(NAME)
-	@make -C inc/Libft fclean > /dev/null
-	@make -C inc/ft_printf fclean > /dev/null
 	@echo "$(RED) $(NAME) clean done 🧹 $(DEFAULT)"
-	@echo "$(RED) $(LIBFT) clean done 🧹 $(DEFAULT)"
-	@echo "$(RED) $(PRINTF) clean done 🧹 $(DEFAULT)"
+
 re: fclean all
 
 #bonus : $(NAME_BONUS)
+
+# PERSONAL USE
+
+git:
+	git add *
+	git commit -m "Some changes made"
+	git push
+	git ls-files
 
 # =============================================================================#
 #                                 COLORS                                       #
