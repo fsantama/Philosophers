@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:25:16 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/20 22:13:12 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/22 20:28:21 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,29 @@ int	check_num(int argc, char **argv)
 	}
 	return (0);
 }
-/*
+
 int	check_table(int argc, char **argv, t_table *table)
 {
-		
+	ft_init_table(argc, argv, table);
+	if (table->n_philos == 0)
+		return (ft_error(NO_PHILOS));
+	return (0);
 }
-*/
+
+int	check_philos(char **argv, t_table *table, t_philos *philo)
+{
+	ft_init_philos(argv, table, philo);
+	return (0);
+}
+
 int	ft_check_args(int argc, char **argv, t_table *table, t_philos *philo)
 {
-	(void) philo;
-	(void) table;
 	if (check_num (argc, argv) != 1)
 	{
-	//	ft_init_structs()
-	//	if (check_table (argc, argv, table) == 1)
-	//		return (1);
-	//	if (check_philos (argc, argv, philo) == 1)
-	//		return (1);	
-	return (0);
+		if (check_table (argc, argv, table) == 1)
+			return (1);
+		if (check_philos (argv, table, philo) == 1)
+			return (1);
 	}
 	return (0);
 }

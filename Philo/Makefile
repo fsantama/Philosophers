@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 18:10:35 by fsantama          #+#    #+#              #
-#    Updated: 2023/09/20 21:07:29 by fsantama         ###   ########.fr        #
+#    Updated: 2023/09/22 19:46:48 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,11 @@ NAME 	=	philo
 #                              MANDATORY PART                                  #
 # =============================================================================#
 
-SRCS	=	src/philosophers.c \
-			src/ft_check_args.c \
+SRCS	=	src/ft_check_args.c \
 			src/ft_error.c \
+			src/init_structures.c \
+			src/philosophers.c \
+			src/utils.c 
 
 OBJS	=	$(SRCS:.c=.o)
 
