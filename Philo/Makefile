@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 18:10:35 by fsantama          #+#    #+#              #
-#    Updated: 2023/09/22 19:46:48 by fsantama         ###   ########.fr        #
+#    Updated: 2023/09/23 19:15:53 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,9 @@ SRCS	=	src/ft_check_args.c \
 			src/ft_error.c \
 			src/init_structures.c \
 			src/philosophers.c \
-			src/utils.c 
-
+			src/utils.c \
+			src/ft_threads \
+			
 OBJS	=	$(SRCS:.c=.o)
 
 # =============================================================================#

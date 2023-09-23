@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:15:12 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/22 20:26:05 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/23 19:15:33 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,33 @@
 ◦[4] Time to sleep (milliseconds)\n \
 ◦[5] Number of times each philosopher must eat (OPTIONAL)\n"
 # define NO_PHILOS "There is no philosophers\n"
-# define ARGS_MAX "Args must be in the range of the intefer limits"
+# define ARGS_MAX "Args must be in the range of the intefer limits\n"
+# define MUTEX_ERROR "Error creating mutex\n"
+# define THREAD_ERROR "Error creating thread\n"
 
 /*----------------------------------STRUCTS-----------------------------------*/
 typedef struct s_table
 {
-	int	n_philos;
-	int	t_dead;
-	int	t_eat;
-	int	t_sleep;
-	int	n_meals;
+	int				n_philos;
+	int				t_dead;
+	int				t_eat;
+	int				t_sleep;
+	int				n_meals;
+	long			time;
+	pthread_mutex_t	print;
+	pthread_mutex_t	stop;
 }	t_table;
 
 typedef struct s_philo
 {
-	int	id;
+	int				id;
+	int				meals;
+	int				l_meal;
+	t_table			*table;
+	pthread_t		thread;
+	pthread_mutex_t	fork_r;
+	pthread_mutex_t	*fork_l;
+	pthread_mutex_t	eat;
 }	t_philos;
 
 /*-------------------------------PARSE GENERAL--------------------------------*/
@@ -76,11 +88,13 @@ int		ft_check_args(int argc, char **argv, t_table *table, t_philos *philo);
 
 int		ft_atoi(const char *str);
 void	ft_init_table(int argc, char **argv, t_table *table);
-void	ft_init_philos(char **argv, t_table *table, t_philos *philo);
+void	ft_init_philos(t_table *table, t_philos *philo);
 
 /*-----------------------------------UTILS------------------------------------*/
 
 int		ft_error(char *error);
+int		ft_get_time(void);
+
 
 /*-----------------------------------COLORS-----------------------------------*/
 # define BOLD		"\033[1m"

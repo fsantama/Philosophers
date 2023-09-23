@@ -6,11 +6,19 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:09:27 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/22 19:49:00 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/23 17:01:46 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philosophers.h"
+
+int	ft_get_time(void)
+{
+	struct timeval	time;
+
+	gettimeofday(&time, NULL);
+	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
+}
 
 int	ft_atoi(const char *str)
 {
