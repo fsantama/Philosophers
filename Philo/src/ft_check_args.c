@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:25:16 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/23 18:34:28 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:59:49 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_philos(t_table *table, t_philos *philo)
 	}
 	if (pthread_mutex_init(&philo->table->print, NULL))
 		return (ft_error(MUTEX_ERROR));
-	if (pthread_mutex_init(&philo->table->stop, NULL))
+	if (pthread_mutex_init(&philo->table->stop_mutex, NULL))
 		return (ft_error(MUTEX_ERROR));
 	philo[0].fork_l = &philo[i - 1].fork_r;
 	return (0);
@@ -62,13 +62,11 @@ int	check_num(int argc, char **argv)
 
 int	ft_check_args(int argc, char **argv, t_table *table, t_philos *philo)
 {
-	(void) philo;
-	if (check_num (argc, argv) != 1)
-	{
-		if (check_table (argc, argv, table) == 1)
-			return (1);
-		//if (check_philos (table, philo) == 1)
-		//	return (1);
-	}
+	if (check_num (argc, argv) == 1)
+		return (1);
+	if (check_table (argc, argv, table) == 1)
+		return (1);
+	if (check_philos (table, philo) == 1)
+		return (1);
 	return (0);
 }

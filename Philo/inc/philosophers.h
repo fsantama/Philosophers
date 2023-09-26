@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:15:12 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/23 19:15:33 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:28:12 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,11 @@ typedef struct s_table
 	int				t_eat;
 	int				t_sleep;
 	int				n_meals;
+	int				ends;
+	int				stop;
 	long			time;
 	pthread_mutex_t	print;
-	pthread_mutex_t	stop;
+	pthread_mutex_t	stop_mutex;
 }	t_table;
 
 typedef struct s_philo
@@ -94,7 +96,6 @@ void	ft_init_philos(t_table *table, t_philos *philo);
 
 int		ft_error(char *error);
 int		ft_get_time(void);
-
 
 /*-----------------------------------COLORS-----------------------------------*/
 # define BOLD		"\033[1m"

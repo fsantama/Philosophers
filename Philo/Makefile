@@ -6,7 +6,7 @@
 #    By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 18:10:35 by fsantama          #+#    #+#              #
-#    Updated: 2023/09/23 19:15:53 by fsantama         ###   ########.fr        #
+#    Updated: 2023/09/26 17:22:33 by fsantama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,6 @@ SRCS	=	src/ft_check_args.c \
 			src/init_structures.c \
 			src/philosophers.c \
 			src/utils.c \
-			src/ft_threads \
 			
 OBJS	=	$(SRCS:.c=.o)
 
@@ -40,16 +39,9 @@ OBJS	=	$(SRCS:.c=.o)
 # =============================================================================#
 
 
-all : $(NAME) $(LIBFT) $(PRINTF)
+all : $(NAME) 
 
-$(LIBFT) : 
-	@make  -C inc/Libft > /dev/null
-
-$(PRINTF) : 
-	@make  -C inc/ft_printf > /dev/null
-
-
-$(NAME) : $(LIBFT) $(PRINTF) $(OBJS)
+$(NAME) : $(OBJS)
 	@echo "$(CYAN) ======================================================="
 	@echo "|		        _     _ _     		        |"
 	@echo "|		  _ __ | |__ (_) | ___  		|"

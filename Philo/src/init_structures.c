@@ -18,6 +18,8 @@ void	ft_init_table(int argc, char **argv, t_table *table)
 	table->t_dead = ft_atoi(argv[2]);
 	table->t_eat = ft_atoi(argv[3]);
 	table->t_sleep = ft_atoi(argv[4]);
+	table->ends = 0;
+	table->stop = 1;
 	table->time = ft_get_time();
 	if (argc == 6)
 	{

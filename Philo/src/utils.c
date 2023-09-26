@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:09:27 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/23 17:01:46 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/26 19:55:40 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	ft_atoi(const char *str)
 	long	n;
 	int		i;
 
+	if (strlen(str) > 11)
+		return (ft_error(ARGS_MAX));
 	n = 0;
 	i = 0;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
@@ -35,6 +37,8 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if (n > INT_MAX)
+	{
 		return (ft_error(ARGS_MAX));
+	}
 	return (n);
 }
