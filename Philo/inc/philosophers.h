@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:15:12 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/28 20:24:47 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/28 23:03:46 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,22 @@
 ◦[3] Time to eat (milliseconds)\n \
 ◦[4] Time to sleep (milliseconds)\n \
 ◦[5] Number of times each philosopher must eat (OPTIONAL)\n"
-# define INVALID_NUMBERS "Arguments must be positive numbers:\n \
+# define INVALID_NUMBERS "Arguments must be positive numbers and be in the range of the \
+intefer limits:\n \
 ◦[1] Number of philosophers \n \
 ◦[2] Time to die (milliseconds) \n \
 ◦[3] Time to eat (milliseconds)\n \
 ◦[4] Time to sleep (milliseconds)\n \
 ◦[5] Number of times each philosopher must eat (OPTIONAL)\n"
 # define NO_PHILOS "There is no philosophers\n"
-# define ARGS_MAX "Args must be in the range of the intefer limits\n"
 # define MUTEX_ERROR "Error creating mutex\n"
 # define THREAD_ERROR "Error creating thread\n"
-# define PRINT_EAT "is eating"
+
 /*------------------------------------LOGS------------------------------------*/
 
-# define FORK_R "has taken the right fork\n"
-# define FORK_L "has taken the left fork\n"
+# define PRINT_EAT "is eating\n"
+# define PRINT_FORK "has taken a fork\n"
+# define PRINT_SLEEP "is sleeping\n"
 
 /*----------------------------------STRUCTS-----------------------------------*/
 typedef struct s_table

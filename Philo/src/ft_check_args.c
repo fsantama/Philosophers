@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:25:16 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/28 19:40:09 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/28 22:59:09 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int	check_table(int argc, char **argv, t_table *table)
 	if (table->n_philos < 0 || table->t_dead < 0
 		|| table->t_eat < 0 || table->t_sleep < 0
 		|| table ->n_meals < 0)
+		return (ft_error(INVALID_NUMBERS));
+	if (table->n_philos > INT_MAX || table->t_dead > INT_MAX
+		|| table->t_eat > INT_MAX || table->t_sleep > INT_MAX
+		|| table ->n_meals > INT_MAX)
 		return (ft_error(INVALID_NUMBERS));
 	return (0);
 }
