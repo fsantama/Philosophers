@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:25:16 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/26 19:59:49 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/28 19:40:09 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	check_philos(t_table *table, t_philos *philo)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	ft_init_philos(table, philo);
-	while (i < table->n_philos)
+	while (++i < table->n_philos)
 	{
 		if (pthread_mutex_init(&philo[i].fork_r, NULL))
 			return (ft_error(MUTEX_ERROR));
@@ -40,6 +40,10 @@ int	check_table(int argc, char **argv, t_table *table)
 	ft_init_table(argc, argv, table);
 	if (table->n_philos == 0)
 		return (ft_error(NO_PHILOS));
+	if (table->n_philos < 0 || table->t_dead < 0
+		|| table->t_eat < 0 || table->t_sleep < 0
+		|| table ->n_meals < 0)
+		return (ft_error(INVALID_NUMBERS));
 	return (0);
 }
 

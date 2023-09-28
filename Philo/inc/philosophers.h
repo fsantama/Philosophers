@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:15:12 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/26 17:28:12 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/09/28 20:24:47 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@
 # define ARGS_MAX "Args must be in the range of the intefer limits\n"
 # define MUTEX_ERROR "Error creating mutex\n"
 # define THREAD_ERROR "Error creating thread\n"
+# define PRINT_EAT "is eating"
+/*------------------------------------LOGS------------------------------------*/
+
+# define FORK_R "has taken the right fork\n"
+# define FORK_L "has taken the left fork\n"
 
 /*----------------------------------STRUCTS-----------------------------------*/
 typedef struct s_table
@@ -64,8 +69,8 @@ typedef struct s_table
 	int				t_sleep;
 	int				n_meals;
 	int				ends;
-	int				stop;
-	long			time;
+	int				start;
+	long			time_start;
 	pthread_mutex_t	print;
 	pthread_mutex_t	stop_mutex;
 }	t_table;
@@ -96,6 +101,10 @@ void	ft_init_philos(t_table *table, t_philos *philo);
 
 int		ft_error(char *error);
 int		ft_get_time(void);
+void	print_mutex(t_philos *philo, char *message);
+void	ft_only_one_philo(t_philos *philo);
+
+
 
 /*-----------------------------------COLORS-----------------------------------*/
 # define BOLD		"\033[1m"
