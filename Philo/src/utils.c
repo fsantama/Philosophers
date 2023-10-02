@@ -6,11 +6,27 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:09:27 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/28 22:32:26 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 17:39:54 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philosophers.h"
+
+void	ft_usleep(int t_sleep, t_philos *philo)
+{
+	int	time;
+
+	time = ft_get_time();
+	pthread_mutex_lock(&philo->table->stop_mutex);
+	while ((ft_get_time() - time < t_sleep) && philo->table->start)
+	{
+		pthread_mutex_lock(&philo->table->stop_mutex);
+		usleep(10);
+		pthread_mutex_unlock(&philo->table->stop_mutex);
+
+	}
+	pthread_mutex_unlock(&philo->table->stop_mutex);
+}
 
 void	ft_only_one_philo(t_philos *philo)
 {
@@ -53,9 +69,5 @@ int	ft_atoi(const char *str)
 		n = (n * 10) + (str[i] - '0');
 		i++;
 	}
-	/*if (n > INT_MAX)
-	{
-		return (ft_error(ARGS_MAX) * -1);
-	}*/
 	return (n);
 }

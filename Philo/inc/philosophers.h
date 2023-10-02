@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:15:12 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/28 23:03:46 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 17:45:53 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ intefer limits:\n \
 # define PRINT_EAT "is eating\n"
 # define PRINT_FORK "has taken a fork\n"
 # define PRINT_SLEEP "is sleeping\n"
+# define PRINT_THINK "is thinking\n"
+# define PRINT_DEAD "dead\n"
 
 /*----------------------------------STRUCTS-----------------------------------*/
 typedef struct s_table
@@ -69,11 +71,12 @@ typedef struct s_table
 	int				t_eat;
 	int				t_sleep;
 	int				n_meals;
-	int				ends;
+	int				end;
 	int				start;
 	long			time_start;
 	pthread_mutex_t	print;
 	pthread_mutex_t	stop_mutex;
+	pthread_t		check_dead;
 }	t_table;
 
 typedef struct s_philo
@@ -104,8 +107,8 @@ int		ft_error(char *error);
 int		ft_get_time(void);
 void	print_mutex(t_philos *philo, char *message);
 void	ft_only_one_philo(t_philos *philo);
-
-
+void	*ft_check_dead(void *arg);
+void	ft_usleep(int t_sleep, t_philos *philo);
 
 /*-----------------------------------COLORS-----------------------------------*/
 # define BOLD		"\033[1m"

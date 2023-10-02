@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:25:45 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/28 23:15:43 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 17:55:24 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,16 @@ void	pthread_finish(t_philos *philo)
 
 	i = -1;
 	while (++i < philo->table->n_philos)
+		pthread_join(philo[i].thread, NULL);
+	i = -1;
+	while (++i < philo->table->n_philos)
 	{
 		pthread_mutex_destroy(&philo[i].fork_r);
 		pthread_mutex_destroy(&philo[i].eat);
 	}
 	pthread_mutex_destroy(&philo->table->print);
 	pthread_mutex_destroy(&philo->table->stop_mutex);
+	free(philo);
 }
 
 void	ft_eat(t_philos *philo)
@@ -55,6 +59,7 @@ void	ft_eat(t_philos *philo)
 	philo->meals += 1;
 	pthread_mutex_unlock(&philo->eat);
 	usleep(philo->table->t_sleep);
+//	ft_usleep(philo->table->t_sleep, philo);
 	pthread_mutex_unlock(philo->fork_l);
 	pthread_mutex_unlock(&philo->fork_r);
 
@@ -71,8 +76,11 @@ void	*ft_threads(void *arg)
 		pthread_mutex_unlock(&philo->table->stop_mutex);
 		ft_eat(philo);
 		print_mutex(philo, PRINT_SLEEP);
-//		ft_sleep(philo);
-//		ft_think(philo);
+		usleep(philo->table->t_sleep);
+//		ft_usleep(philo->table->t_sleep, philo);
+		if (philo->table->t_sleep == 0)
+			usleep(1);
+		print_mutex(philo, PRINT_THINK);
 		pthread_mutex_lock(&philo->table->stop_mutex);
 	}
 	pthread_mutex_unlock(&philo->table->stop_mutex);
@@ -85,7 +93,6 @@ int	main(int argc, char **argv)
 	t_philos	*philo;
 	int			i;
 
-	atexit(leaks);
 	i = -1;
 	printf("%s", HEADER);
 	philo = (t_philos *) malloc(sizeof(t_philos) * table.n_philos);
@@ -100,6 +107,8 @@ int	main(int argc, char **argv)
 			if (pthread_create(&philo[i].thread, NULL, ft_threads, &philo[i]))
 				return (ft_error(THREAD_ERROR));
 		}
+		if (pthread_create(&table.check_dead, NULL, ft_check_dead, philo))
+			return (ft_error(THREAD_ERROR));
 		pthread_finish(philo);
 	}
 	else

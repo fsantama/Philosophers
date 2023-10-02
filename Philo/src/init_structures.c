@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:33:54 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/28 19:31:40 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 17:46:36 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_init_table(int argc, char **argv, t_table *table)
 	table->t_dead = ft_atoi(argv[2]);
 	table->t_eat = ft_atoi(argv[3]);
 	table->t_sleep = ft_atoi(argv[4]);
-	table->ends = 0;
+	table->end = 0;
 	table->start = 1;
 	table->time_start = ft_get_time();
 	if (argc == 6)
