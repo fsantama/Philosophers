@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:09:27 by fsantama          #+#    #+#             */
-/*   Updated: 2023/10/02 17:39:54 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:48:29 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_usleep(int t_sleep, t_philos *philo)
 	pthread_mutex_lock(&philo->table->stop_mutex);
 	while ((ft_get_time() - time < t_sleep) && philo->table->start)
 	{
-		pthread_mutex_lock(&philo->table->stop_mutex);
 		usleep(10);
 		pthread_mutex_unlock(&philo->table->stop_mutex);
 

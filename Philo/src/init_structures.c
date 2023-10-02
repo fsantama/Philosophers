@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 19:33:54 by fsantama          #+#    #+#             */
-/*   Updated: 2023/10/02 17:46:36 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 18:38:25 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_init_table(int argc, char **argv, t_table *table)
 	if (argc == 6)
 	{
 		table->n_meals = ft_atoi(argv[5]);
+		table->end = 1;
 	}
 }
 
@@ -34,7 +35,7 @@ void	ft_init_philos(t_table *table, t_philos *philo)
 	i = 0;
 	while (i < table->n_philos)
 	{
-		philo[i].id = i;
+		philo[i].id = i + 1;
 		philo[i].meals = 0;
 		philo[i].l_meal = ft_get_time();
 		philo[i].table = table;

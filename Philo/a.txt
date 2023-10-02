@@ -1,0 +1,938 @@
+
+[36;1m   ____  _   _ ___ _     ___  ____   ___  ____  _   _ _____ ____  ____   
+  |  _ )| | | |_ _| |   / _ )( ___| / _ )|  _ )| | | | ____|  _ )( ___|  
+  | |_) | |_| || || |  | | | (___ )| | | | |_) | |_| |  _| | |_) |___ )  
+  |  __/|  _  || || |__| |_| |___) | |_| |  __/|  _  | |___|  _ < ___) | 
+  |_|   |_| |_|___|_____(___/|____/ (___/|_|   |_| |_|_____|_|   (____/  
+                                                                         
+ 																		
+ [37;1m                         Develop by fsantama                  
+ 
+[0m0 Philo 1 has taken a fork
+
+0 Philo 1 has taken a fork
+
+0 Philo 1 is eating
+
+0 Philo 3 has taken a fork
+
+0 Philo 3 has taken a fork
+
+0 Philo 3 is eating
+
+200 Philo 3 is sleeping
+
+200 Philo 1 is sleeping
+
+200 Philo 4 has taken a fork
+
+200 Philo 4 has taken a fork
+
+200 Philo 4 is eating
+
+200 Philo 5 has taken a fork
+
+200 Philo 2 has taken a fork
+
+200 Philo 2 has taken a fork
+
+200 Philo 2 is eating
+
+400 Philo 1 is thinking
+
+400 Philo 3 is thinking
+
+400 Philo 3 has taken a fork
+
+400 Philo 3 has taken a fork
+
+400 Philo 3 is eating
+
+400 Philo 2 is sleeping
+
+400 Philo 4 is sleeping
+
+400 Philo 1 has taken a fork
+
+400 Philo 5 has taken a fork
+
+400 Philo 5 is eating
+
+600 Philo 4 is thinking
+
+600 Philo 5 is sleeping
+
+600 Philo 3 is sleeping
+
+600 Philo 2 is thinking
+
+600 Philo 1 has taken a fork
+
+600 Philo 1 is eating
+
+600 Philo 4 has taken a fork
+
+600 Philo 4 has taken a fork
+
+600 Philo 4 is eating
+
+800 Philo 4 is sleeping
+
+800 Philo 1 is sleeping
+
+800 Philo 3 is thinking
+
+800 Philo 3 has taken a fork
+
+800 Philo 3 has taken a fork
+
+800 Philo 3 is eating
+
+800 Philo 2 has taken a fork
+
+800 Philo 5 is thinking
+
+800 Philo 5 has taken a fork
+
+800 Philo 5 has taken a fork
+
+800 Philo 5 is eating
+
+1000 Philo 5 is sleeping
+
+1000 Philo 3 is sleeping
+
+1000 Philo 4 is thinking
+
+1000 Philo 4 has taken a fork
+
+1000 Philo 4 has taken a fork
+
+1000 Philo 4 is eating
+
+1000 Philo 2 has taken a fork
+
+1000 Philo 2 is eating
+
+1000 Philo 1 is thinking
+
+1200 Philo 5 is thinking
+
+1200 Philo 2 is sleeping
+
+1200 Philo 5 has taken a fork
+
+1200 Philo 5 has taken a fork
+
+1200 Philo 5 is eating
+
+1200 Philo 4 is sleeping
+
+1200 Philo 1 has taken a fork
+
+1200 Philo 3 is thinking
+
+1200 Philo 3 has taken a fork
+
+1200 Philo 3 has taken a fork
+
+1200 Philo 3 is eating
+
+1400 Philo 3 is sleeping
+
+1400 Philo 4 is thinking
+
+1400 Philo 4 has taken a fork
+
+1400 Philo 4 has taken a fork
+
+1400 Philo 4 is eating
+
+1400 Philo 1 has taken a fork
+
+1400 Philo 1 is eating
+
+1400 Philo 5 is sleeping
+
+1400 Philo 2 is thinking
+
+1600 Philo 3 is thinking
+
+1600 Philo 2 has taken a fork
+
+1600 Philo 2 has taken a fork
+
+1600 Philo 2 is eating
+
+1600 Philo 3 has taken a fork
+
+1600 Philo 5 is thinking
+
+1600 Philo 5 has taken a fork
+
+1600 Philo 5 has taken a fork
+
+1600 Philo 5 is eating
+
+1600 Philo 1 is sleeping
+
+1600 Philo 4 is sleeping
+
+1800 Philo 4 is thinking
+
+1800 Philo 2 is sleeping
+
+1800 Philo 5 is sleeping
+
+1800 Philo 3 has taken a fork
+
+1800 Philo 3 is eating
+
+1800 Philo 1 is thinking
+
+1800 Philo 1 has taken a fork
+
+1800 Philo 1 has taken a fork
+
+1800 Philo 1 is eating
+
+2000 Philo 2 is thinking
+
+2000 Philo 4 has taken a fork
+
+2000 Philo 4 has taken a fork
+
+2000 Philo 2 has taken a fork
+
+2000 Philo 2 has taken a fork
+
+2000 Philo 2 is eating
+
+2000 Philo 4 is eating
+
+2000 Philo 1 is sleeping
+
+2000 Philo 5 is thinking
+
+2000 Philo 3 is sleeping
+
+2000 Philo 5 has taken a fork
+
+2200 Philo 3 is thinking
+
+2200 Philo 2 is sleeping
+
+2200 Philo 4 is sleeping
+
+2200 Philo 3 has taken a fork
+
+2200 Philo 3 has taken a fork
+
+2200 Philo 3 is eating
+
+2200 Philo 1 is thinking
+
+2200 Philo 1 has taken a fork
+
+2200 Philo 5 has taken a fork
+
+2200 Philo 5 is eating
+
+2400 Philo 4 is thinking
+
+2400 Philo 2 is thinking
+
+2400 Philo 3 is sleeping
+
+2400 Philo 4 has taken a fork
+
+2400 Philo 4 has taken a fork
+
+2400 Philo 4 is eating
+
+2400 Philo 5 is sleeping
+
+2400 Philo 1 has taken a fork
+
+2400 Philo 1 is eating
+
+2600 Philo 4 is sleeping
+
+2600 Philo 3 is thinking
+
+2600 Philo 3 has taken a fork
+
+2600 Philo 3 has taken a fork
+
+2600 Philo 3 is eating
+
+2600 Philo 2 has taken a fork
+
+2600 Philo 1 is sleeping
+
+2600 Philo 5 is thinking
+
+2600 Philo 5 has taken a fork
+
+2600 Philo 5 has taken a fork
+
+2600 Philo 5 is eating
+
+2800 Philo 4 is thinking
+
+2800 Philo 5 is sleeping
+
+2800 Philo 3 is sleeping
+
+2800 Philo 1 is thinking
+
+2800 Philo 2 has taken a fork
+
+2800 Philo 2 is eating
+
+2800 Philo 4 has taken a fork
+
+2800 Philo 4 has taken a fork
+
+2800 Philo 4 is eating
+
+3000 Philo 3 is thinking
+
+3000 Philo 2 is sleeping
+
+3000 Philo 3 has taken a fork
+
+3000 Philo 3 has taken a fork
+
+3000 Philo 3 is eating
+
+3000 Philo 4 is sleeping
+
+3000 Philo 1 has taken a fork
+
+3000 Philo 1 has taken a fork
+
+3000 Philo 5 is thinking
+
+3000 Philo 1 is eating
+
+3200 Philo 4 is thinking
+
+3200 Philo 2 is thinking
+
+3200 Philo 4 has taken a fork
+
+3200 Philo 4 has taken a fork
+
+3200 Philo 4 is eating
+
+3200 Philo 3 is sleeping
+
+3200 Philo 1 is sleeping
+
+3200 Philo 2 has taken a fork
+
+3200 Philo 2 has taken a fork
+
+3200 Philo 2 is eating
+
+3200 Philo 5 has taken a fork
+
+3400 Philo 2 is sleeping
+
+3400 Philo 3 is thinking
+
+3400 Philo 3 has taken a fork
+
+3400 Philo 3 has taken a fork
+
+3400 Philo 4 is sleeping
+
+3400 Philo 1 is thinking
+
+3400 Philo 1 has taken a fork
+
+3400 Philo 3 is eating
+
+3400 Philo 5 has taken a fork
+
+3400 Philo 5 is eating
+
+3600 Philo 2 is thinking
+
+3600 Philo 5 is sleeping
+
+3600 Philo 3 is sleeping
+
+3600 Philo 1 has taken a fork
+
+3600 Philo 1 is eating
+
+3600 Philo 4 is thinking
+
+3600 Philo 4 has taken a fork
+
+3600 Philo 4 has taken a fork
+
+3600 Philo 4 is eating
+
+3800 Philo 5 is thinking
+
+3800 Philo 1 is sleeping
+
+3800 Philo 4 is sleeping
+
+3800 Philo 2 has taken a fork
+
+3800 Philo 2 has taken a fork
+
+3800 Philo 2 is eating
+
+3800 Philo 5 has taken a fork
+
+3800 Philo 5 has taken a fork
+
+3800 Philo 5 is eating
+
+3800 Philo 3 is thinking
+
+3800 Philo 3 has taken a fork
+
+4000 Philo 1 is thinking
+
+4000 Philo 4 is thinking
+
+4000 Philo 5 is sleeping
+
+4000 Philo 2 is sleeping
+
+4000 Philo 1 has taken a fork
+
+4000 Philo 1 has taken a fork
+
+4000 Philo 1 is eating
+
+4000 Philo 3 has taken a fork
+
+4000 Philo 3 is eating
+
+4200 Philo 1 is sleeping
+
+4200 Philo 4 has taken a fork
+
+4200 Philo 4 has taken a fork
+
+4200 Philo 4 is eating
+
+4200 Philo 2 is thinking
+
+4200 Philo 2 has taken a fork
+
+4200 Philo 3 is sleeping
+
+4200 Philo 2 has taken a fork
+
+4200 Philo 2 is eating
+
+4200 Philo 5 is thinking
+
+4200 Philo 5 has taken a fork
+
+4400 Philo 3 is thinking
+
+4400 Philo 2 is sleeping
+
+4400 Philo 4 is sleeping
+
+4400 Philo 5 has taken a fork
+
+4400 Philo 5 is eating
+
+4400 Philo 1 is thinking
+
+4400 Philo 3 has taken a fork
+
+4400 Philo 3 has taken a fork
+
+4400 Philo 3 is eating
+
+4400 Philo 1 has taken a fork
+
+4600 Philo 2 is thinking
+
+4600 Philo 5 is sleeping
+
+4600 Philo 1 has taken a fork
+
+4600 Philo 1 is eating
+
+4600 Philo 4 is thinking
+
+4600 Philo 4 has taken a fork
+
+4600 Philo 4 has taken a fork
+
+4600 Philo 4 is eating
+
+4600 Philo 3 is sleeping
+
+4800 Philo 4 is sleeping
+
+4800 Philo 1 is sleeping
+
+4800 Philo 3 is thinking
+
+4800 Philo 3 has taken a fork
+
+4800 Philo 3 has taken a fork
+
+4800 Philo 3 is eating
+
+4800 Philo 5 is thinking
+
+4800 Philo 5 has taken a fork
+
+4800 Philo 5 has taken a fork
+
+4800 Philo 5 is eating
+
+4800 Philo 2 has taken a fork
+
+5000 Philo 1 is thinking
+
+5000 Philo 3 is sleeping
+
+5000 Philo 2 has taken a fork
+
+5000 Philo 2 is eating
+
+5000 Philo 5 is sleeping
+
+5000 Philo 4 is thinking
+
+5000 Philo 4 has taken a fork
+
+5000 Philo 4 has taken a fork
+
+5000 Philo 4 is eating
+
+5200 Philo 3 is thinking
+
+5200 Philo 2 is sleeping
+
+5200 Philo 1 has taken a fork
+
+5200 Philo 5 is thinking
+
+5200 Philo 3 has taken a fork
+
+5200 Philo 3 has taken a fork
+
+5200 Philo 3 is eating
+
+5200 Philo 4 is sleeping
+
+5200 Philo 1 has taken a fork
+
+5200 Philo 1 is eating
+
+5400 Philo 4 is thinking
+
+5400 Philo 2 is thinking
+
+5400 Philo 3 is sleeping
+
+5400 Philo 1 is sleeping
+
+5400 Philo 2 has taken a fork
+
+5400 Philo 2 has taken a fork
+
+5400 Philo 2 is eating
+
+5400 Philo 5 has taken a fork
+
+5400 Philo 5 has taken a fork
+
+5400 Philo 5 is eating
+
+5400 Philo 4 has taken a fork
+
+5600 Philo 2 is sleeping
+
+5600 Philo 5 is sleeping
+
+5600 Philo 3 is thinking
+
+5600 Philo 1 is thinking
+
+5600 Philo 1 has taken a fork
+
+5600 Philo 1 has taken a fork
+
+5600 Philo 1 is eating
+
+5600 Philo 4 has taken a fork
+
+5600 Philo 4 is eating
+
+5800 Philo 5 is thinking
+
+5800 Philo 3 has taken a fork
+
+5800 Philo 3 has taken a fork
+
+5800 Philo 3 is eating
+
+5800 Philo 4 is sleeping
+
+5800 Philo 1 is sleeping
+
+5800 Philo 5 has taken a fork
+
+5800 Philo 5 has taken a fork
+
+5800 Philo 5 is eating
+
+5800 Philo 2 is thinking
+
+5800 Philo 2 has taken a fork
+
+6000 Philo 4 is thinking
+
+6000 Philo 5 is sleeping
+
+6000 Philo 3 is sleeping
+
+6000 Philo 1 is thinking
+
+6000 Philo 2 has taken a fork
+
+6000 Philo 2 is eating
+
+6000 Philo 4 has taken a fork
+
+6000 Philo 4 has taken a fork
+
+6000 Philo 4 is eating
+
+6200 Philo 3 is thinking
+
+6200 Philo 4 is sleeping
+
+6200 Philo 5 is thinking
+
+6200 Philo 5 has taken a fork
+
+6200 Philo 5 has taken a fork
+
+6200 Philo 5 is eating
+
+6200 Philo 1 has taken a fork
+
+6200 Philo 2 is sleeping
+
+6200 Philo 3 has taken a fork
+
+6200 Philo 3 has taken a fork
+
+6200 Philo 3 is eating
+
+6400 Philo 3 is sleeping
+
+6400 Philo 4 is thinking
+
+6400 Philo 4 has taken a fork
+
+6400 Philo 4 has taken a fork
+
+6400 Philo 4 is eating
+
+6400 Philo 2 is thinking
+
+6400 Philo 5 is sleeping
+
+6400 Philo 1 has taken a fork
+
+6400 Philo 1 is eating
+
+6600 Philo 5 is thinking
+
+6600 Philo 1 is sleeping
+
+6600 Philo 4 is sleeping
+
+6600 Philo 5 has taken a fork
+
+6600 Philo 5 has taken a fork
+
+6600 Philo 5 is eating
+
+6600 Philo 2 has taken a fork
+
+6600 Philo 2 has taken a fork
+
+6600 Philo 2 is eating
+
+6600 Philo 3 is thinking
+
+6600 Philo 3 has taken a fork
+
+6800 Philo 5 is sleeping
+
+6800 Philo 4 is thinking
+
+6800 Philo 2 is sleeping
+
+6800 Philo 3 has taken a fork
+
+6800 Philo 3 is eating
+
+6800 Philo 1 is thinking
+
+6800 Philo 1 has taken a fork
+
+6800 Philo 1 has taken a fork
+
+6800 Philo 1 is eating
+
+7000 Philo 1 is sleeping
+
+7000 Philo 2 is thinking
+
+7000 Philo 2 has taken a fork
+
+7000 Philo 5 is thinking
+
+7000 Philo 5 has taken a fork
+
+7000 Philo 2 has taken a fork
+
+7000 Philo 5 has taken a fork
+
+7000 Philo 5 is eating
+
+7000 Philo 2 is eating
+
+7000 Philo 3 is sleeping
+
+7000 Philo 4 has taken a fork
+
+7200 Philo 3 is thinking
+
+7200 Philo 2 is sleeping
+
+7200 Philo 5 is sleeping
+
+7200 Philo 1 is thinking
+
+7200 Philo 1 has taken a fork
+
+7200 Philo 4 has taken a fork
+
+7200 Philo 4 is eating
+
+7200 Philo 1 has taken a fork
+
+7200 Philo 1 is eating
+
+7400 Philo 5 is thinking
+
+7400 Philo 3 has taken a fork
+
+7400 Philo 5 has taken a fork
+
+7400 Philo 1 is sleeping
+
+7400 Philo 3 has taken a fork
+
+7400 Philo 3 is eating
+
+7400 Philo 5 has taken a fork
+
+7400 Philo 5 is eating
+
+7400 Philo 4 is sleeping
+
+7400 Philo 2 is thinking
+
+7400 Philo 2 has taken a fork
+
+7600 Philo 5 is sleeping
+
+7600 Philo 4 is thinking
+
+7600 Philo 4 has taken a fork
+
+7600 Philo 4 has taken a fork
+
+7600 Philo 4 is eating
+
+7600 Philo 2 has taken a fork
+
+7600 Philo 2 is eating
+
+7600 Philo 1 is thinking
+
+7600 Philo 3 is sleeping
+
+7800 Philo 5 is thinking
+
+7800 Philo 5 has taken a fork
+
+7800 Philo 2 is sleeping
+
+7800 Philo 5 has taken a fork
+
+7800 Philo 5 is eating
+
+7800 Philo 3 is thinking
+
+7800 Philo 3 has taken a fork
+
+7800 Philo 3 has taken a fork
+
+7800 Philo 3 is eating
+
+7800 Philo 4 is sleeping
+
+7800 Philo 1 has taken a fork
+
+8000 Philo 4 is thinking
+
+8000 Philo 3 is sleeping
+
+8000 Philo 2 is thinking
+
+8000 Philo 4 has taken a fork
+
+8000 Philo 4 has taken a fork
+
+8000 Philo 4 is eating
+
+8000 Philo 1 has taken a fork
+
+8000 Philo 1 is eating
+
+8000 Philo 5 is sleeping
+
+8200 Philo 4 is sleeping
+
+8200 Philo 1 is sleeping
+
+8200 Philo 5 is thinking
+
+8200 Philo 5 has taken a fork
+
+8200 Philo 5 has taken a fork
+
+8200 Philo 5 is eating
+
+8200 Philo 2 has taken a fork
+
+8200 Philo 2 has taken a fork
+
+8200 Philo 2 is eating
+
+8200 Philo 3 is thinking
+
+8200 Philo 3 has taken a fork
+
+8400 Philo 5 is sleeping
+
+8400 Philo 1 is thinking
+
+8400 Philo 4 is thinking
+
+8400 Philo 1 has taken a fork
+
+8400 Philo 1 has taken a fork
+
+8400 Philo 1 is eating
+
+8400 Philo 2 is sleeping
+
+8400 Philo 3 has taken a fork
+
+8400 Philo 3 is eating
+
+8600 Philo 1 is sleeping
+
+8600 Philo 3 is sleeping
+
+8600 Philo 5 is thinking
+
+8600 Philo 5 has taken a fork
+
+8600 Philo 5 has taken a fork
+
+8600 Philo 5 is eating
+
+8600 Philo 4 has taken a fork
+
+8600 Philo 2 is thinking
+
+8600 Philo 2 has taken a fork
+
+8600 Philo 2 has taken a fork
+
+8600 Philo 2 is eating
+
+8800 Philo 3 is thinking
+
+8800 Philo 1 is thinking
+
+8800 Philo 1 has taken a fork
+
+8800 Philo 1 has taken a fork
+
+8800 Philo 1 is eating
+
+8800 Philo 4 has taken a fork
+
+8800 Philo 4 is eating
+
+8800 Philo 5 is sleeping
+
+8800 Philo 2 is sleeping
+
+9000 Philo 2 is thinking
+
+9000 Philo 4 is sleeping
+
+9000 Philo 3 has taken a fork
+
+9000 Philo 3 has taken a fork
+
+9000 Philo 3 is eating
+
+9000 Philo 2 has taken a fork
+
+9000 Philo 5 is thinking
+
+9000 Philo 5 has taken a fork
+
+9000 Philo 5 has taken a fork
+
+9000 Philo 5 is eating
+
+9000 Philo 1 is sleeping
+
+9200 Philo 1 is thinking
+
+9200 Philo 4 is thinking
+
+9200 Philo 2 has taken a fork
+
+9200 Philo 4 has taken a fork
+
+9200 Philo 3 is sleeping
+
+9200 Philo 5 is sleeping
+
+9200 Philo 4 has taken a fork
+
+9200 Philo 4 is eating
+
+9200 Philo 2 is eating
+

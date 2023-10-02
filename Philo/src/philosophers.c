@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:25:45 by fsantama          #+#    #+#             */
-/*   Updated: 2023/10/02 17:55:24 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:23:37 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ void	ft_eat(t_philos *philo)
 	philo->l_meal = ft_get_time();
 	philo->meals += 1;
 	pthread_mutex_unlock(&philo->eat);
-	usleep(philo->table->t_sleep);
-//	ft_usleep(philo->table->t_sleep, philo);
+	ft_usleep(philo->table->t_sleep, philo);
 	pthread_mutex_unlock(philo->fork_l);
 	pthread_mutex_unlock(&philo->fork_r);
 
@@ -76,8 +75,7 @@ void	*ft_threads(void *arg)
 		pthread_mutex_unlock(&philo->table->stop_mutex);
 		ft_eat(philo);
 		print_mutex(philo, PRINT_SLEEP);
-		usleep(philo->table->t_sleep);
-//		ft_usleep(philo->table->t_sleep, philo);
+		ft_usleep(philo->table->t_sleep, philo);
 		if (philo->table->t_sleep == 0)
 			usleep(1);
 		print_mutex(philo, PRINT_THINK);
