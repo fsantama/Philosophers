@@ -6,7 +6,7 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:05:05 by fsantama          #+#    #+#             */
-/*   Updated: 2023/09/28 18:52:24 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:25:00 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 int	ft_error(char *error)
 {
 	printf(RED "%s" DEFAULT, error);
-//	exit (1);
 	return (1);
 }

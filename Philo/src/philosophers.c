@@ -6,16 +6,11 @@
 /*   By: fsantama <fsantama@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:25:45 by fsantama          #+#    #+#             */
-/*   Updated: 2023/10/02 19:23:37 by fsantama         ###   ########.fr       */
+/*   Updated: 2023/10/02 20:06:35 by fsantama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/philosophers.h"
-
-void	leaks(void)
-{
-	system("leaks -q philo");
-}
 
 void	pthread_finish(t_philos *philo)
 {
@@ -24,6 +19,7 @@ void	pthread_finish(t_philos *philo)
 	i = -1;
 	while (++i < philo->table->n_philos)
 		pthread_join(philo[i].thread, NULL);
+	pthread_join(philo->table->check_dead, NULL);
 	i = -1;
 	while (++i < philo->table->n_philos)
 	{
@@ -33,6 +29,13 @@ void	pthread_finish(t_philos *philo)
 	pthread_mutex_destroy(&philo->table->print);
 	pthread_mutex_destroy(&philo->table->stop_mutex);
 	free(philo);
+}
+
+void	ft_only_one_philo(t_philos *philo)
+{	
+	pthread_mutex_unlock(&philo->fork_r);
+	ft_usleep(philo->table->t_dead + 5, philo);
+	pthread_exit(NULL);
 }
 
 void	ft_eat(t_philos *philo)
@@ -61,7 +64,6 @@ void	ft_eat(t_philos *philo)
 	ft_usleep(philo->table->t_sleep, philo);
 	pthread_mutex_unlock(philo->fork_l);
 	pthread_mutex_unlock(&philo->fork_r);
-
 }
 
 void	*ft_threads(void *arg)
